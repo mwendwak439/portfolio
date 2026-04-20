@@ -1,7 +1,22 @@
+import photo from '../images/Developer Frontend Developer Pin.jpeg'
+
 function Skills(){
     return(
+        <>
+<div>
 
-<h1>skills</h1>
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+    
+        </>
     )
 }
 export default Skills
