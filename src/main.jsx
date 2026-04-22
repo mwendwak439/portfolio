@@ -6,6 +6,7 @@ import Home from './pages/home.jsx'
 import Project from './pages/project.jsx'
 import Contact from './pages/contact.jsx'
 import Skills from './pages/skills.jsx'
+import About from './pages/about.jsx'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 
@@ -21,7 +22,10 @@ const rout=createBrowserRouter([{
   {path:'/contact',
     element:<Contact/>},
     {path:'/skills',
-      element:<Skills/> }
+      element:<Skills/> },
+       {path:'/about',
+      element:<About/> }
+      
   
 ]
 }])

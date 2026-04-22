@@ -1,21 +1,46 @@
-import { Link } from "react-router-dom"
-function Nav(){
-    return(
-<div className="container">
 
-    <h1>Portfolio</h1>
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-    <ul>
+function Nav() {
+   
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        <li><Link to="/home" >Home</Link ></li>
-        <li><Link to="/skills" >Skills</Link ></li>
-        <li><Link to="/project" >Project</Link ></li>
-        <li><Link to="/contact" >Contact</Link ></li>
+    
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
         
-    </ul>
-</div>
+    };
 
+    
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
-    )
+    return (
+        <>
+            <div className="navbar">
+                <h1>Portfolio</h1>
+                
+              
+                <div className="hamburgerbtn" onClick={toggleMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+           
+            <nav className={`navmenu ${isMenuOpen ? 'active' : ''}`}>
+                <ul>
+                    <li><Link to="/home" onClick={closeMenu}>Home</Link></li>
+                    <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+                    <li><Link to="/skills" onClick={closeMenu}>Skills</Link></li>
+                    <li><Link to="/project" onClick={closeMenu}>Project</Link></li>
+                    <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+                </ul>
+            </nav>
+             </div>
+        </>
+    );
 }
-export default Nav
+
+export default Nav;
